@@ -13,3 +13,4 @@ Node editor to use MediaPipe calculators to build graphs & subgraphs.
     * https://docs.microsoft.com/en-us/visualstudio/modeling/directed-graph-markup-language-dgml-reference?view=vs-2019
 * https://news.ycombinator.com/item?id=22024201
 * https://news.ycombinator.com/item?id=22005495
+* https://github.com/ArsMasiuk/qvge
