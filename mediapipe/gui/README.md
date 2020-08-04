@@ -16,3 +16,4 @@ Node editor to use MediaPipe calculators to build graphs & subgraphs.
 * https://github.com/ArsMasiuk/qvge
 * https://blogs.apache.org/nifi/
 * [OpenCV's Pipeline Builder](https://www.kickstarter.com/projects/opencv/opencv-ai-kit)
+* https://medium.com/swlh/what-makes-godot-engine-great-for-advance-gui-applications-b1cfb941df3b
