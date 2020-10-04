@@ -115,6 +115,7 @@ class SplitNormalizedLandmarkListCalculator : public CalculatorBase {
     RET_CHECK_GE(input.landmark_size(), max_range_end_)
         << "Max range end " << max_range_end_ << " exceeds landmarks size "
         << input.landmark_size();
+    LOG(INFO) << ">>> landmarks: "<<input.landmark_size();//<<"\n"<< input.DebugString();
 
     if (combine_outputs_) {
       NormalizedLandmarkList output;

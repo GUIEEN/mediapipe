@@ -165,7 +165,7 @@ node {
   output_stream: "NORM_LANDMARKS:raw_landmarks"
   options: {
     [mediapipe.TfLiteTensorsToLandmarksCalculatorOptions.ext] {
-      num_landmarks: 31
+      num_landmarks: 31#124#31
       input_image_width: 256
       input_image_height: 256
     }

@@ -181,8 +181,20 @@ REGISTER_CALCULATOR(TfLiteTensorsToLandmarksCalculator);
   }
   const int num_dimensions = num_values / num_landmarks_;
   CHECK_GT(num_dimensions, 0);
+  LOG(INFO) << "num_dimensions: "<<num_dimensions;
 
   const float* raw_landmarks = raw_tensor->data.f;
+
+  for (int ld = 0; ld < 124; ++ld) {//31; ++ld) {
+    const int offset = ld * num_dimensions;
+    LOG(INFO) << ld << ":\t"
+              << "{\tx:"<<raw_landmarks[offset]
+              << ",\ty:"<<raw_landmarks[offset + 1]
+              << ",\tz:"<<raw_landmarks[offset + 2]
+              << ",\tv:"<<raw_landmarks[offset + 3]
+              << ",\tp:"<<raw_landmarks[offset + 4]
+              <<"}";
+  }
 
   LandmarkList output_landmarks;
 
