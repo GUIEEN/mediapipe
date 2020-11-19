@@ -7,7 +7,7 @@ nav_order: 1
 ![MediaPipe](docs/images/mediapipe_small.png)
 
 --------------------------------------------------------------------------------
-
+[Speech to text](https://github.com/mozilla/DeepSpeech)
 ## Live ML anywhere
 
 [MediaPipe](https://google.github.io/mediapipe/) offers cross-platform, customizable
