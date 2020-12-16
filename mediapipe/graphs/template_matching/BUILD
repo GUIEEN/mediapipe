@@ -17,7 +17,7 @@ load(
     "mediapipe_binary_graph",
 )
 
-licenses(["notice"])
+licenses(["notice"])  # Apache 2.0
 
 package(default_visibility = ["//visibility:public"])
 
@@ -64,4 +64,17 @@ mediapipe_binary_graph(
     graph = "template_matching_mobile_cpu.pbtxt",
     output_name = "mobile_cpu.binarypb",
     deps = [":mobile_calculators"],
+)
+
+
+cc_library(
+    name = "desktop_calculators_live",
+    deps = [
+        ":template_matching_deps",
+        "//mediapipe/calculators/core:flow_limiter_calculator",
+        "//mediapipe/calculators/image:opencv_encoded_image_to_image_frame_calculator",
+        "//mediapipe/calculators/util:local_file_pattern_contents_calculator",
+        "//mediapipe/calculators/video:opencv_video_decoder_calculator",
+        "//mediapipe/calculators/video:opencv_video_encoder_calculator",
+    ],
 )

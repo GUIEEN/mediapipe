@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-licenses(["notice"])
+licenses(["notice"])  # Apache 2.0
 
 package(default_visibility = ["//mediapipe/examples:__subpackages__"])
 
@@ -21,5 +21,13 @@ cc_binary(
     deps = [
         "//mediapipe/examples/desktop:simple_run_graph_main",
         "//mediapipe/graphs/template_matching:desktop_calculators",
+    ],
+)
+
+cc_binary(
+    name = "template_matching_tflite_live_cpu",
+    deps = [
+        "//mediapipe/examples/desktop:demo_run_graph_main",
+        "//mediapipe/graphs/template_matching:desktop_calculators_live",
     ],
 )
