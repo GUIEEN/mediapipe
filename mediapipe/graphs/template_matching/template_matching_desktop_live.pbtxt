@@ -8,8 +8,6 @@
 # frame per time.
 max_queue_size: 1
 
-
-
 # ----------------------------------------------------------
 # ----------------------------------------------------------
 # Images on CPU coming into and out of the graph.
@@ -64,6 +62,7 @@ node {
   node_options: {
     [type.googleapis.com/mediapipe.TfLiteInferenceCalculatorOptions] {
       model_path: "mediapipe/models/knift_float.tflite"
+      delegate { xnnpack {} }
     }
   }
 }
@@ -130,7 +129,7 @@ node {
 # Draws annotations and overlays them on top of the input images.
 node {
   calculator: "AnnotationOverlayCalculator"
-  input_stream: "IMAGE:input_video"
+  input_stream: "IMAGE:throttled_input_video"
   input_stream: "box_render_data"
   input_stream: "landmarks_render_data"
   output_stream: "IMAGE:output_video"
