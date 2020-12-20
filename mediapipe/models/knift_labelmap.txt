@@ -1,3 +1,4 @@
-1USD
-20USD
-5USD
+book1
+book2
+calendar
+iqos
