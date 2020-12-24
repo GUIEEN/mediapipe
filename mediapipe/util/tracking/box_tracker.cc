@@ -16,8 +16,10 @@
 
 #include <sys/stat.h>
 
+#include <chrono>
 #include <fstream>
 #include <limits>
+#include <thread>
 
 #include "absl/strings/str_cat.h"
 #include "absl/synchronization/mutex.h"
@@ -667,7 +669,7 @@ bool BoxTracker::WaitForChunkFile(int id, int checkpoint,
       }
     }
 
-    usleep(wait_time_msec * 1000);
+    std::this_thread::sleep_for(std::chrono::milliseconds(wait_time_msec));
     total_wait_msec += wait_time_msec;
 
     struct stat tmp;

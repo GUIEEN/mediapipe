@@ -1620,9 +1620,6 @@ bool MotionBox::GetVectorsAndWeights(
   is_outlier.reserve(num_max_vectors);
   int num_cont_inliers = 0;
 
-  // Approx. 2 pix at SD resolution.
-  constexpr float kSqProximity = 2e-3 * 2e-3;
-
   for (int k = start_idx; k < end_idx; ++k) {
     // x is within bound due to sorting.
     const MotionVector& test_vector = motion_vectors[k];
@@ -1653,6 +1650,8 @@ bool MotionBox::GetVectorsAndWeights(
     vectors->push_back(&motion_vectors[k]);
 
     auto is_close_to_test_vector = [test_vector](const Vector2_f v) -> bool {
+      // Approx. 2 pix at SD resolution.
+      constexpr float kSqProximity = 2e-3 * 2e-3;
       return (v - test_vector.pos).Norm2() < kSqProximity;
     };
 
