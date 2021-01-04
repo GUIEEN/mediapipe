@@ -1,3 +1,8 @@
+load(
+    "@build_bazel_rules_apple//apple:ios.bzl",
+    "ios_static_framework",
+)
+
 load("//mediapipe/framework/tool:mediapipe_graph.bzl", "mediapipe_binary_graph")
 
 package(default_visibility = ["//visibility:private"])
@@ -88,6 +93,12 @@ objc_library(
         "@com_google_absl//absl/synchronization",
         "@google_toolbox_for_mac//:GTM_Defines",
     ],
+)
+
+ios_static_framework(
+    name =  "MediapipeIos",
+    deps = [":mediapipe_framework_ios"],
+    minimum_os_version = "11.0",
 )
 
 objc_library(
